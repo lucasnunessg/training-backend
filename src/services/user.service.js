@@ -1,24 +1,27 @@
 const { User } = require('../models');
+const { Sequelize, DataTypes } = require('sequelize');
+
 
 const getAll = async () => {
-    const users = await user.findAll();
+    const users = await User.findAll();
+    console.log(users);
     return users;
 }
 
 const getById = async (id) => {
-    const user = await user.findByPk(id);
+    const user = await User.findByPk(id);
   
-    return user;
+    return User;
   };
 
   const getByIdAndEmail = async (id, email) => {
-    const user = await user.findOne({ where: { id, email } });
+    const user = await User.findOne({ where: { id, email } });
   
-    return user;
+    return User;
   };
 
   const createUser = async (fullName, contact, email) => {
-    const newUser = await user.create({ fullName, contact, email });
+    const newUser = await User.create({ fullName, contact, email });
 
     return newUser
   }
