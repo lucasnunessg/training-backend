@@ -1,5 +1,4 @@
-
-const { userService } = require('../services/user.service')
+const { userService } = require('../services/index')
 
 const getAll = async (_req, res) => {
   try {
